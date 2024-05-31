@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相册</title>
+    <style>
+				body {
+		            background-image: url('image5.jpg');
+		            background-size: cover;
+		            background-repeat: no-repeat;
+		        }
+		
+		
+		
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>我的相册</h1>
+    <div class="gallery">
+        <img src="1.jpg" alt="Image 1">
+        <img src="2.jpg" alt="Image 2">
+        <img src="3.jpg" alt="Image 3">
+		<img src="4.jpg" alt="Image 3">
+		<img src="5.jpg" alt="Image 3">
+		<img src="6.jpg" alt="Image 3">
+		<img src="7.jpg" alt="Image 3">
+		<img src="8.jpg" alt="Image 3">
+		<img src="9.jpg" alt="Image 3">
+		<img src="10.jpg" alt="Image 3">
+		<img src="11.jpg" alt="Image 3">
+		<img src="12.jpg" alt="Image 3">
+        <!-- 添加更多图片 -->
+    </div>
+</div>
+
+</body>
+</html>

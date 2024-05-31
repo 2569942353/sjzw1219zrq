@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+			body {
+	            background-image: url('image5.jpg');
+	            background-size: cover;
+	            background-repeat: no-repeat;
+	        }
+	body {
+	    line-height: 2; /* 设置整个文档的默认行高 */
+	}
+	
+	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章搜索</title>
+  </head>
+  <body>
+  
+<center>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>文章搜索</title>
+  </head>
+  <body>
+  
+  <h1>文章搜索</h1>
+  
+  <!-- 搜索表单 -->
+  <form id="search-form">
+      <label for="search-input">输入关键词：</label>
+      <input type="text" id="search-input" name="search" placeholder="请输入关键词">
+      <button type="submit">搜索</button>
+  </form>
+  
+  <!-- 显示搜索结果的部分 -->
+  <div id="search-results">
+      <!-- 搜索结果将在这里显示 -->
+  </div>
+  
+  <script>
+      document.getElementById("search-form").addEventListener("submit", function(event) {
+          event.preventDefault(); // 阻止表单提交
+          var searchTerm = document.getElementById("search-input").value.trim(); // 获取搜索关键词并去除首尾空格
+  
+          // 检查搜索关键词是否为空
+          if (searchTerm === "") {
+              alert("请输入搜索关键词");
+              return;
+          }
+  
+          // 模拟搜索结果（实际应该发送到后端进行搜索）
+          var articles = [
+              { title: "我用什么才能留住你？", content: "文章内容1" },
+              { title: "如何使用HTML？", content: "文章内容2" },
+              { title: "什么是计算机网络？", content: "文章内容3" },
+			  { title: "央视新闻谈台独", content: "文章内容4" },
+			  { title: "世界知识产权大会即将在中国展开", content: "文章内容5" },
+			  { title: "计算机python软件商城", content: "文章内容6" },
+			  { title: "计算机网络java百科", content: "文章内容7" },
+			  { title: "74138译码器百科", content: "文章内容8" }
+          ];
+  
+          // 根据搜索关键词过滤文章
+          var filteredArticles = articles.filter(function(article) {
+              return article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                     article.content.toLowerCase().includes(searchTerm.toLowerCase());
+          });
+  
+          // 将搜索结果显示在页面上
+          var searchResultsDiv = document.getElementById("search-results");
+          searchResultsDiv.innerHTML = ""; // 清空之前的搜索结果
+  
+          if (filteredArticles.length > 0) {
+              var resultList = document.createElement("ul");
+              filteredArticles.forEach(function(article) {
+                  var listItem = document.createElement("li");
+                  listItem.textContent = article.title;
+                  resultList.appendChild(listItem);
+              });
+              searchResultsDiv.appendChild(resultList);
+          } else {
+              searchResultsDiv.textContent = "未找到匹配的文章";
+          }
+      });
+  </script>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<ul>
+    <li><a href="文章1.html">我用什么才能留住你？</a></li>
+    <li><a href="https://blog.csdn.net/m0_61869253/article/details/132690445">如何使用HTML？</a></li>
+    <li><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/18763?fr=ge_ala">什么是计算机网络？</a></li>
+	<li><a href="https://baijiahao.baidu.com/s?id=1800464140482995712">央视新闻谈台独</a></li>
+	<li><a href="https://baijiahao.baidu.com/s?id=1800484020338125211&wfr=spider&for=pc">世界知识产权大会即将在中国展开</a></li>
+	<li><a href="https://b.wxqilinz.cn/python/">计算机python软件商城</a></li>
+	<li><a href="https://baike.baidu.com/item/Java/85979?fr=ge_ala">计算机网络java百科</a></li>
+	<li><a href="https://baike.baidu.com/item/74138/7045731?fr=ge_ala">74138译码器百科</a></li>
+	
+    <!-- 添加更多相关文章链接 -->
+</ul>
+
+</body>
+</html>

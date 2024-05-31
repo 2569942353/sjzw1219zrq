@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+</head>
+<body><style
+>body {
+            background-image: url('image5.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+body {
+    line-height: 2; /* 设置整个文档的默认行高 */
+}
+
+</style>
+    
+    <center>
+    <h1>留言板</h1>
+    
+    <form id="messageForm">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" content="width=device-width><br><br>
+        
+        <label for="email">邮箱:</label>
+        <input type="email" id="email" required><br><br>
+        
+        <label for="content">留言信息:</label><br>
+        <textarea id="content" rows="4" required></textarea><br><br>
+        
+        <button type="submit">提交留言</button>
+    </form>
+    
+    <div id="messages">
+        <!-- Messages will be displayed here -->
+    </div>
+    
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const content = document.getElementById('content').value;
+            
+            // Here you can handle the submission, for example, by adding the message to the page
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = `
+                <strong>${name}</strong> (${email}): ${content}
+                <hr>
+            `;
+            document.getElementById('messages').appendChild(messageElement);
+    
+            // Optionally, you can also send the message to a server using fetch or XMLHttpRequest
+            // and store it in a database
+        });
+    </script>
+</body>
+</html>
